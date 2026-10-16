@@ -1,0 +1,93 @@
+{
+  "title": "Data Pipeline Health Monitor",
+  "description": "Manage dataset, check result, incident report with persistent records, typed forms, search and CSV/JSON import.",
+  "entities": [
+    {
+      "name": "dataset",
+      "label": "Dataset",
+      "fields": [
+        {
+          "name": "source_type",
+          "label": "Source Type",
+          "type": "select",
+          "required": true,
+          "options": [
+            "csv",
+            "sqlite"
+          ]
+        },
+        {
+          "name": "path",
+          "label": "File Path",
+          "type": "text",
+          "required": true,
+          "options": []
+        },
+        {
+          "name": "last_checked_at",
+          "label": "Last Checked At",
+          "type": "date",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "check_result",
+      "label": "Check Result",
+      "fields": [
+        {
+          "name": "dataset_id",
+          "label": "Dataset",
+          "type": "text",
+          "required": true,
+          "options": []
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "type": "select",
+          "required": true,
+          "options": [
+            "fresh",
+            "stale"
+          ]
+        },
+        {
+          "name": "error_message",
+          "label": "Error Message",
+          "type": "text",
+          "required": false,
+          "options": []
+        }
+      ]
+    },
+    {
+      "name": "incident_report",
+      "label": "Incident Report",
+      "fields": [
+        {
+          "name": "dataset_id",
+          "label": "Dataset",
+          "type": "text",
+          "required": true,
+          "options": []
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "type": "text",
+          "required": true,
+          "options": []
+        },
+        {
+          "name": "suggested_fixes",
+          "label": "Suggested Fixes",
+          "type": "text",
+          "required": false,
+          "options": []
+        }
+      ]
+    }
+  ]
+}

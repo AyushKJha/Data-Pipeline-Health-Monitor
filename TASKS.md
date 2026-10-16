@@ -1,0 +1,4 @@
+- [ ] Connect a local dataset via CSV or SQLite import
+- [ ] Run freshness checks on tables
+- [ ] Validate schema consistency
+- [ ] Show incident reports with suggested fixes
